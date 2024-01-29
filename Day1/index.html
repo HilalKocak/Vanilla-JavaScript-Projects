@@ -60,15 +60,15 @@
 
 <script>
   
-  function playSound(e) {
+  function playSound(keyCode) {
     // console.log(e.keyCode)
-    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-    const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+    const audio = document.querySelector(`audio[data-key="${keyCode}"]`);
+    const key = document.querySelector(`.key[data-key="${keyCode}"]`);
     // console.log(audio)
     if(!audio) return ; // stop the function
     audio.currentTime = 0 // rewind to the start
     audio.play();
-    // console.log(key)
+    console.log(key)
     key.classList.add('playing');
     
   }
@@ -81,8 +81,17 @@
   }
   const keys = document.querySelectorAll('.key'); // keys = Nodelist
   // console.log(keys)
-  keys.forEach(key => key.addEventListener('transitionend', removeTransition));
-  window.addEventListener('keydown', playSound);
+  
+    keys.forEach(key => {
+      key.addEventListener('transitionend', removeTransition);
+      // I added mouse click support
+      key.addEventListener('click', () => playSound(key.getAttribute('data-key')));
+    });
+
+  window.addEventListener('keydown', (e) => playSound(e.keyCode));
+
+
+ 
 
 
 </script>

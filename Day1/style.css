@@ -49,3 +49,42 @@ kbd {
   letter-spacing: .1rem;
   color: #ffc600;
 }
+@media (max-width: 600px) {
+  .key {
+    width: 45%; 
+    font-size: 1.2rem;
+  }
+
+  kbd {
+    font-size: 3rem;
+  }
+
+  .sound {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .key {
+    width: 22%;
+  }
+}
+@media (max-width: 601px) {
+  .keys {
+    flex-direction: column;
+  }
+
+  .key {
+    width: 90%; 
+    font-size: 1.2rem; 
+    margin: 0.5rem; 
+  }
+
+  kbd {
+    font-size: 2.5rem; 
+  }
+
+  .sound {
+    font-size: 1rem; 
+  }
+}

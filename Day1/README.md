@@ -1,0 +1,2 @@
+- Added mouse click functionality
+- Updated CSS for responsiveness
