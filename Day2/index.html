@@ -75,6 +75,21 @@
 
   <script>
 
+    const secondHand = document.querySelector('.second-hand');
+
+    
+    function setDate() {
+      // console.log('hi') 
+      const now = new Date();
+      const seconds = now.getSeconds();
+      console.log(seconds)
+      /*The additional 90 degrees in the angle calculation ensures the second hand starts correctly from the 12 o'clock position.*/
+      const secondDegrees = ((seconds / 60) * 360) + 90;
+      secondHand.style.transform = `rotate(${secondDegrees}deg)`
+    }
+
+    setInterval(setDate, 1000); /*The setDate function is set to be called every 1000 ms, that is, every 1 second.*/
+
 
   </script>
 </body>
