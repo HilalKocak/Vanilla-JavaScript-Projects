@@ -19,7 +19,7 @@
 
   <style>
     html {
-      background: #018DED url(https://unsplash.it/1500/1000?image=881&blur=5);
+      background: #018DED url(https://unsplash.it/1500/1000?image=129&blur=5);
       background-size: cover;
       font-family: 'helvetica neue';
       text-align: center;
@@ -63,6 +63,12 @@
       background: black;
       position: absolute;
       top: 50%;
+      transform-origin: 100%; /* rotate from the very right hand side(default is 50%) */
+      transform: rotate(90deg); /* for all dials to point to 12 */
+      transition: all 0.5s;
+      transition-timing-function:cubic-bezier(0.075, 0.82, 0.165, 1);
+/* cubic bezier sets the transiton timing like tik tak */
+
     }
 
   </style>
