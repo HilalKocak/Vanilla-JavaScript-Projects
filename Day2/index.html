@@ -3,83 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <title>JS + CSS Clock</title>
+  <link rel="stylesheet" href="style.css">
   <link rel="icon" href="https://fav.farm/🔥" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
 </head>
 <body>
-
+  <div class="clock-container">
+    <button id="soundToggleButton"><i class="fas fa-bell"></i></button>
 
     <div class="clock">
       <div class="clock-face">
         <div class="hand hour-hand"></div>
         <div class="hand min-hand"></div>
         <div class="hand second-hand"></div>
+        <div class="time"></div>
+        <ul>
+            <li><span>1</span></li>
+            <li><span>2</span></li>
+            <li><span>3</span></li>
+            <li><span>4</span></li>
+            <li><span>5</span></li>
+            <li><span>6</span></li>
+            <li><span>7</span></li>
+            <li><span>8</span></li>
+            <li><span>9</span></li>
+            <li><span>10</span></li>
+            <li><span>11</span></li>
+            <li><span>12</span></li>
+        </ul>
       </div>
     </div>
 
+  </div>
+    
+    <audio class="audio" src="snare-stick.wav"></audio>
 
-  <style>
-    html {
-      background: #018DED url(https://unsplash.it/1500/1000?image=129&blur=5);
-      background-size: cover;
-      font-family: 'helvetica neue';
-      text-align: center;
-      font-size: 10px;
-    }
 
-    body {
-      margin: 0;
-      font-size: 2rem;
-      display: flex;
-      flex: 1;
-      min-height: 100vh;
-      align-items: center;
-    }
 
-    .clock {
-      width: 30rem;
-      height: 30rem;
-      border: 20px solid white;
-      border-radius: 50%;
-      margin: 50px auto;
-      position: relative;
-      padding: 2rem;
-      box-shadow:
-        0 0 0 4px rgba(0,0,0,0.1),
-        inset 0 0 0 3px #EFEFEF,
-        inset 0 0 10px black,
-        0 0 10px rgba(0,0,0,0.2);
-    }
-
-    .clock-face {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      transform: translateY(-3px); /* account for the height of the clock hands */
-    }
-
-    .hand {
-      width: 50%;
-      height: 6px;
-      background: black;
-      position: absolute;
-      top: 50%;
-      transform-origin: 100%; /* rotate from the very right hand side(default is 50%) */
-      transform: rotate(90deg); /* for all dials to point to 12 */
-      transition: all 0.5s;
-      transition-timing-function:cubic-bezier(0.075, 0.82, 0.165, 1);
-/* cubic bezier sets the transiton timing like tik tak */
-
-    }
-
-  </style>
 
   <script>
 
     const secondHand = document.querySelector('.second-hand');
     const minHand = document.querySelector('.min-hand');
     const hourHand = document.querySelector('.hour-hand');
-
+    const time = document.querySelector('.time');
+    const clock = document.querySelector('.clock');
+    const audio = document.querySelector('.audio');
     
+  
+    function toggleSound() {
+    isSoundOn = !isSoundOn; // Sesi aç/kapa
+
+    // Buton ikonunu güncelle
+    document.getElementById('soundToggleButton').innerHTML = isSoundOn ? '<i class="fas fa-bell"></i>' : '<i class="fas fa-bell-slash"></i>';
+}
     function setDate() {
       // console.log('hi') 
       const now = new Date();
@@ -101,17 +79,28 @@
       else 
       {
         secondHand.style.transition = 'all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1)';
+        
       }
 
 
       secondHand.style.transform = `rotate(${secondDegrees}deg)`
       minHand.style.transform = `rotate(${minDegrees}deg)`
       hourHand.style.transform = `rotate(${hourDegrees}deg)`
+      time.innerHTML = '<span>' + '<strong>' + hours + '</strong>' + ' : ' + minutes + ' : ' + '<small>' + seconds +'</small>'+ '</span>';
+
+      if (isSoundOn && audio.readyState >= 3) {
+        audio.currentTime = 0; 
+        audio.play();
+        }
+        
     }
 
+
     setInterval(setDate, 1000); /*The setDate function is set to be called every 1000 ms, that is, every 1 second.*/
+    isSoundOn = false;
+    document.getElementById('soundToggleButton').innerHTML = '<i class="fas fa-bell-slash"></i>';
 
-
+    document.getElementById('soundToggleButton').addEventListener('click', toggleSound);
   </script>
 </body>
 </html>
