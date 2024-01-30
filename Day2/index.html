@@ -53,9 +53,9 @@
     
   
     function toggleSound() {
-    isSoundOn = !isSoundOn; // Sesi aç/kapa
+    isSoundOn = !isSoundOn; 
 
-    // Buton ikonunu güncelle
+ 
     document.getElementById('soundToggleButton').innerHTML = isSoundOn ? '<i class="fas fa-bell"></i>' : '<i class="fas fa-bell-slash"></i>';
 }
     function setDate() {
@@ -67,9 +67,9 @@
       // console.log(seconds);
       // console.log(minutes);
       /*The additional 90 degrees in the angle calculation ensures the second hand starts correctly from the 12 o'clock position.*/
-      const secondDegrees = ((seconds / 60) * 360) + 90;
-      const minDegrees = ((minutes / 60) * 360) + 90;
-      const hourDegrees = ((hours / 12) * 360) + 90; 
+      const secondDegrees = ((seconds / 60) * 360) + 360; 
+      const minDegrees = ((minutes / 60) * 360); 
+      const hourDegrees = ((hours / 12) * 360); 
 
       /* temporarily disable the transition property when the second hand hits 0 seconds to prevent the reverse motion, and then re-enable it for the rest of the cycle */
       if (seconds === 0) 

@@ -14,7 +14,7 @@ html {
   flex: 1;
   min-height: 100vh;
   align-items: center;
-  justify-content: center; /* Yatayda ortalamak için */
+  justify-content: center; 
   }
   #soundToggleButton {
   font-size: 24px; 
@@ -31,7 +31,7 @@ html {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center; /* İçerikleri metin bazında da ortalar */
+  text-align: center; 
   }
   
   .clock {
@@ -53,22 +53,10 @@ html {
     position: relative;
     width: 100%;
     height: 100%;
-    transform: translateY(-3px); /* account for the height of the clock hands */
+    transform: translateY(-3px); 
   }
   
-  .hand {
-    width: 50%;
-    height: 6px;
-    background: black;
-    position: absolute;
-    top: 50%;
-    transform-origin: 100%; /* rotate from the very right hand side(default is 50%) */
-    transform: rotate(90deg); /* for all dials to point to 12 */
-    transition: all 0.5s;
-    transition-timing-function:cubic-bezier(0.075, 0.82, 0.165, 1);
-  /* cubic bezier sets the transiton timing like tik tak */
-  
-  }
+
   
   .time{
   position: absolute;
@@ -82,8 +70,8 @@ html {
   border-radius: 5px;
   min-width: 70px;
   height: 15px;
-  font-size: 14px; /* Metin boyutunu artırın */
-  line-height: 15px; /* Metinlerin dikey hizalamasını düzeltin */
+  font-size: 14px;
+  line-height: 15px; 
   
   }
   .time small{
@@ -166,5 +154,66 @@ html {
   font-size: 20px;
   font-weight: bold;
   }
-  
-  
+  .center{
+    background-color: #000;
+    position: absolute;
+    left: calc(50% - 10px);
+    top:  calc(50% - 10px);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    z-index: 20;
+}
+.hour-hand{
+    width: 10px;
+    height: 75px;
+    background-color: #000;
+    transform-origin: bottom center;
+    border-radius: 4px;
+    position: absolute;
+    top: 75px;
+    left: 145px;
+    z-index: 10;
+    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+      transform: rotate(360deg);
+
+}
+.min-hand{
+    width: 5px;
+    height: 120px;
+    background-color: #000;
+    transform-origin: bottom center;
+    border-radius: 4px;
+    position: absolute;
+    top: 30px;
+    left: 147px;
+    z-index: 9;
+    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+    transform: rotate(90deg);
+
+}
+.second-hand{
+    width: 2px;
+    height: 120px;
+    background-color:red;
+    transform-origin: bottom center;
+    border-radius: 4px;
+    position: absolute;
+    top: 30px;
+    left: 149px;
+    transition: all 0.06s;
+    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+    z-index: 8;  
+    transform: rotate(360deg);
+
+}
+.center{
+    background-color: #000;
+    position: absolute;
+    left: calc(50% - 10px);
+    top:  calc(50% - 10px);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    z-index: 20;
+}
