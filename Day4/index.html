@@ -38,9 +38,30 @@
     
     // Array.prototype.filter()
     // 1. Filter the list of inventors for those who were born in the 1500's
+    const fifteen =inventors.filter(function(inventor) {
+      if(inventor.year >= 1500 && inventor.year < 1600)
+        return true; // keep this item
+    });
+    console.table(fifteen);
+
+    // another practical way to do it
+    const fifteen2 =inventors.filter(inventor => inventor.year >= 1500 && inventor.year < 1600);
+    console.table(fifteen2);
 
     // Array.prototype.map()
     // 2. Give us an array of the inventors first and last names
+ 
+
+
+   
+
+    // Array.prototype.sort()
+    // 3. Sort the list of inventors by last name
+  
+
+    // Array.prototype.reduce()
+    // 4. Find the total number of inventors who passed the 1900's
+
 
     // Array.prototype.sort()
     // 3. Sort the inventors by birthdate, oldest to youngest
