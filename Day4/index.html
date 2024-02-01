@@ -73,15 +73,24 @@
     const ordered2 = inventors.sort((a,b) => a.year > b.year ? 1 : -1);
     console.log(ordered2);
 
-    // Array.prototype.reduce()
-    // 4. Find the total number of inventors who passed the 1900's
-
-
-    // Array.prototype.sort()
-    // 3. Sort the inventors by birthdate, oldest to youngest
-
+    
     // Array.prototype.reduce()
     // 4. How many years did all the inventors live all together?
+
+    var totalYears = 0;
+    for (var i = 0; i < inventors.length; i++) {
+      totalYears += inventors[i].passed - inventors[i].year;
+    }
+    console.log(totalYears);
+    // or
+
+    const totalYears2 = inventors.reduce((total, inventor) => {
+      return total + (inventor.passed - inventor.year);
+    }, 0);
+    console.log(totalYears2);
+
+
+
 
     // 5. Sort the inventors by years lived
 
@@ -95,6 +104,7 @@
     // 8. Reduce Exercise
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
+
 
   </script>
 </body>
