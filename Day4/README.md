@@ -1,0 +1,1 @@
+### Day 4 is about making practice with arrays
