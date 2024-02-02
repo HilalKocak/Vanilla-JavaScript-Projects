@@ -78,6 +78,19 @@
       text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
       font-size: 2em;
     }
+    .panel > *:first-child {
+      transform: translateY(-100%) ;
+    }
+    .panel.open-active > *:first-child {
+      transform: translateY(0) ;
+    }
+    .panel > *:last-child {
+      transform: translateY(100%) ;
+    }
+    .panel.open-active > *:last-child {
+      transform: translateY(0) ;
+    }
+
 
     .panel p:nth-child(2) {
       font-size: 4em;
@@ -85,6 +98,7 @@
 
     .panel.open {
       font-size: 40px;
+      flex: 5;
     }
 
   </style>
