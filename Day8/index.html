@@ -6,6 +6,7 @@
   <link rel="icon" href="https://fav.farm/🔥" />
 </head>
 <body>
+<div id="message">Let's draw something! </div>
 <canvas id="draw" width="800" height="800"></canvas>
 <script>
   const canvas = document.querySelector('#draw');
@@ -50,12 +51,15 @@
     }
 
   }
-
+  const message = document.getElementById('message');
   canvas.addEventListener('mousemove', draw);
   canvas.addEventListener('mousedown', (e) => {
     isDrawing = true;
     [lastX, lastY] = [e.offsetX, e.offsetY];
+    message.style.display = 'none';
   });
+
+
   canvas.addEventListener('mouseup', () => isDrawing = false);
   canvas.addEventListener('mouseout', () => isDrawing = false);
 
@@ -65,6 +69,17 @@
 <style>
   html, body {
     margin: 0;
+  }
+
+  #message {
+    font-size: 30px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+
   }
 </style>
 
