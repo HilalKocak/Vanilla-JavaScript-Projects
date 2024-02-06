@@ -2,4 +2,15 @@
 
 ### JavaScript30 challenge formed by Wes Bos at https://javascript30.com/
 - This challenge is about making 30 JavaScript project in 30 days.
-- I wil update it day by day to complete
+
+#### Projects
+##### JavaScript Drum Kit
+##### CSS + JS Clock
+##### Playing with CSS Variables and JS
+##### Array Cardio Day 1
+##### Flex Panels Image Gallery
+##### Ajax Type Ahead
+##### Array Cardio Day 2
+##### Fun with HTML Canvas
+##### 14 Must Know Dev Tools Tricks
+

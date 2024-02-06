@@ -6,7 +6,7 @@
 ![Screenshot of starter file](img/starter.png)
 
 #### Web app looks like this after finished the project:
-![Screenshot of starter file](img/after.png)
+![Screenshot of deployed app](img/after.png)
 
 ##### Data is coming from an external source and you can see as a following json.
 https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json
