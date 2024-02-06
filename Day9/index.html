@@ -8,7 +8,7 @@
 <body>
 
   <p onClick="makeGreen()">×BREAK×DOWN×</p>
-
+  <p><em>Psst: have a look at the JavaScript Console</em> 👩🏻‍💻</p>
   <script>
     const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
 
@@ -62,6 +62,7 @@
     // Grouping together
     dogs.forEach(dog => {
       console.group(`${dog.name}`);
+    //  console.groupCollapsed(`${dog.name}`); default collapsed
       console.log(`This is ${dog.name}`)
       console.log(`${dog.name} is ${dog.age} years old`)
       console.log(`${dog.name} is ${dog.age * 7} dog years old`)
@@ -69,8 +70,27 @@
     })
 
     // counting
+    console.count('Hilal');
+    console.count('Ayse');
+    console.count('Hilal');
+    console.count('Arife');
+    console.count('Hilal');
+    console.count('Ayse');
+    console.count('Hilal');
 
-    // timing
+    // timing: how long something takes
+    console.time('fethcing data');
+    fetch('https://api.github.com/users/wesbos')
+    .then(data => data.json)
+    .then(data => {
+      console.log(data);
+      console.timeEnd('fethcing data');
+    })
+
+    //table
+    console.table(dogs);
+
+
 
   </script>
 </body>
