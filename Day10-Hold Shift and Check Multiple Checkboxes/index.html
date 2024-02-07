@@ -103,19 +103,21 @@ let lastChecked = false;
 
 function handleCheck(e) {
   let inBetween=false;
-  if(e.shiftKey && this.checked) { // handleCheck triggers when uncheck, we should guarentee if checked
+  if(e.shiftKey && this.checked && lastChecked) { // handleCheck triggers when uncheck, we should guarentee if checked
     // loop over every single checkbox
     checkboxes.forEach(checkbox => {
       console.log(checkbox);
       if(checkbox == this || checkbox === lastChecked) {
         inBetween = !inBetween;
         console.log('starting to check them in between');
-
       }
       if(inBetween) {
         checkbox.checked = true;
       }
+      
     })
+    console.log('Last Check', lastChecked)
+    console.log('this is this', this)
 
   }
   lastChecked = this;
