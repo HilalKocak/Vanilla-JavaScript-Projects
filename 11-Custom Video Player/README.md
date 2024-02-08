@@ -8,6 +8,6 @@
 #### You can try this app with the link:
 https://javascript30challenge-day11.netlify.app/
 
-#### These are the previews of application
+#### These are the previews of the application:
 ![Screenshot of deployed app](img/preview.png)
 ![Screenshot of deployed app](img/preview2.png)
