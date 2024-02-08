@@ -37,6 +37,13 @@ function handleProgress(){
 
 }
 
+function scrub(e) {
+    // console.log('e.offsetX--',e.offsetX);
+    // console.log('progress offset width', progress.offsetWidth)
+    const scrubTime = (e.offsetX / progress.offsetWidth) * video.duration
+    video.currentTime = scrubTime;
+}
+
 // Hook up the events listeners
 video.addEventListener('click', togglePlay);
 video.addEventListener('play', updateButton);
@@ -48,3 +55,6 @@ video.addEventListener('timeupdate', handleProgress);
 skipButtons.forEach((button) => button.addEventListener('click', skip));
 
 ranges.forEach((range) => range.addEventListener('change', handleRangeUpdate));
+ranges.forEach((range) => range.addEventListener('mousemove', handleRangeUpdate));
+
+progress.addEventListener('click', scrub);
