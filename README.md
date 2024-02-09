@@ -13,4 +13,7 @@
 ##### Array Cardio Day 2
 ##### Fun with HTML Canvas
 ##### 14 Must Know Dev Tools Tricks
+##### Hold Shift and Check Multiple Checkboxes
+##### Custom Video Player
+##### Key Sequence Detection
 
