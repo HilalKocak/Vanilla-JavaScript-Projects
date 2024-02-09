@@ -4,16 +4,16 @@
 - This challenge is about making 30 JavaScript project in 30 days.
 
 #### Projects
-##### JavaScript Drum Kit
-##### CSS + JS Clock
-##### Playing with CSS Variables and JS
-##### Array Cardio Day 1
-##### Flex Panels Image Gallery
-##### Ajax Type Ahead
-##### Array Cardio Day 2
-##### Fun with HTML Canvas
-##### 14 Must Know Dev Tools Tricks
-##### Hold Shift and Check Multiple Checkboxes
-##### Custom Video Player
-##### Key Sequence Detection
+##### 1- JavaScript Drum Kit
+##### 2- CSS + JS Clock
+##### 3- Playing with CSS Variables and JS
+##### 4- Array Cardio Day 1
+##### 5- Flex Panels Image Gallery
+##### 6- Ajax Type Ahead
+##### 7- Array Cardio Day 2
+##### 8- Fun with HTML Canvas
+##### 9- 14 Must Know Dev Tools Tricks
+##### 10- Hold Shift and Check Multiple Checkboxes
+##### 11- Custom Video Player
+##### 12- Key Sequence Detection
 
