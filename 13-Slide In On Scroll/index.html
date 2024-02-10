@@ -65,8 +65,29 @@
       // console.log(window.scrollY)
       // console.count(e)
       sliderImages.forEach(slideImage => {
-        const slideInAt = window.scrollY + window.innerHeight - slideImage.height / 2;
-        console.log(slideInAt)
+        const slideInAt = window.scrollY + window.innerHeight - slideImage.height / 2; //When half of the image is reached, the image becomes visible.
+        
+        console.log("window.innerHeight  ", window.innerHeight);
+        console.log("window.ScrollY  ", window.scrollY);
+        console.log("slideInAt  ", slideInAt);
+        console.log("slideImage.height  ", slideImage.height)
+        
+        const imageBottom = slideImage.offsetTop + slideImage.height;
+        console.log("imageBottom  ", imageBottom)
+        
+        const isHalfShown = slideInAt > slideImage.offsetTop;
+        console.log("isHalfShown  ", isHalfShown)
+        
+        const isNotScrolledPast = window.scrollY < imageBottom;
+        console.log("isNotScrolledPast  ", isNotScrolledPast)
+        
+        
+        if(isNotScrolledPast && isHalfShown) {
+          slideImage.classList.add('active')
+        }else{
+          slideImage.classList.remove('active')
+        }
+
       })
     }
 
