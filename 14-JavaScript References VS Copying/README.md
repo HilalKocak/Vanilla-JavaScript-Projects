@@ -1,7 +1,7 @@
 ### JavaScript References and Copying
-#### strings, numbers and booleans can easily assign to each other. When one of them changed, the other not.
+#### Strings, numbers, and booleans can be easily assigned to each other. When one of them changes, the others do not
 
-#### arrays and objects work differently. If any assignment happens, the other variable becomes reference and when the one of them change, the other one change too.
+#### Arrays and objects work differently. If any assignment happens, the other variable becomes a reference, and when one of them is changed, the other one changes too.
 
 #### Used methods:
 - [].concat
