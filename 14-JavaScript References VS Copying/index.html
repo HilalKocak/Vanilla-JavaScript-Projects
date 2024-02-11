@@ -6,7 +6,7 @@
   <link rel="icon" href="https://fav.farm/🔥" />
 </head>
 <body>
-
+  <p><em>Psst: have a look at the JavaScript Console</em> 👩🏻‍💻</p>
   <script>
     // strings, numbers and booleans are not changing if you change one of them. They are working like copy mechanism
 
@@ -121,10 +121,21 @@
     dev.social.twitter = '@devtwitter' // now! hilal is changed too. Because one level reference the inner are working like reference
     // object assign works one level copy, inners are reference
 
-    // the way of inner elements copy
+
+    // es6 spread works one level copy, inners are reference
+    // changes both
+    const dev3 = {...hilal}
+    dev3.social.twitter = "@es6spread"
+    console.log("dev3 ",dev3)
+    console.log("hilal", hilal)
+
+
+    // Solution: the copy way of inner elements
     const dev2 = JSON.parse(JSON.stringify(hilal))
     dev2.social.twitter = '@coolwoman'
     console.log(hilal)
+
+
   </script>
 
 </body>
