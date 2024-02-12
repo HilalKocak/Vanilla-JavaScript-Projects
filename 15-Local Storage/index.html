@@ -31,6 +31,19 @@
   const itemsList = document.querySelector('.plates');
   const items = [];
 
+  function addItem(e){
+    e.preventDefault()
+    const text = (this.querySelector('[name=item]')).value;
+    const item = {
+      text, // same text:text
+      done: false,
+    }
+    items.push(item);
+    console.log(item)
+    this.reset()
+
+  }
+  addItems.addEventListener('submit', addItem)
 </script>
 
 
