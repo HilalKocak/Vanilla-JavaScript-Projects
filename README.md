@@ -16,4 +16,8 @@
 ##### 10- Hold Shift and Check Multiple Checkboxes
 ##### 11- Custom Video Player
 ##### 12- Key Sequence Detection
+##### 13- Slide in And Scroll
+##### 14- JavaScript References Vs Copying
+##### 15- LocalStorage and Event Delegation
+##### 16- CSS Text Shadow Mouse Move Effect
 
