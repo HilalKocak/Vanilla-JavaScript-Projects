@@ -4,5 +4,5 @@
 #### You can try this app with the link:
 https://javascript30challenge-day12.netlify.app/
 
-#### This is the preview of application
+#### This is the preview of the application:
 ![Screenshot of deployed app](img/cornify.png)

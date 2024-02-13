@@ -6,8 +6,13 @@
   <link rel="icon" href="https://fav.farm/🔥" />
 </head>
 <body>
-
+  <p><em>Psst: change the progress bar to arrange the size of the shadow! </em> 👩🏻‍💻</p>
+ 
+  <input type="range" id="walkRange" min="0" max="1000" value="400">
+  
   <div class="hero">
+    
+
     <h1 contenteditable>🔥WOAH!</h1>
   </div>
 
@@ -33,13 +38,20 @@
     text-shadow: 10px 10px 0 rgba(0,0,0,1);
     font-size: 100px;
   }
+  input[type="range"] {
+  position: absolute; /* Absolute positioning */
+  bottom: 20px; /* Bottom margin */
+  width: 80%; /* Width of the range input */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center horizontally */
+}
   </style>
 
 <script>
 
   const hero = document.querySelector('.hero')
   const text = hero.querySelector('h1')
-  const walk = 400; // 100px
+  let walk = 400; // 100px
 
   function shadow(e) {
     // console.log(e);
@@ -72,7 +84,11 @@
   }
 
   hero.addEventListener('mousemove', shadow);
+  const walkRange = document.getElementById('walkRange');
 
+  walkRange.addEventListener('input', function() {
+    walk = parseInt(this.value);
+  });
 </script>
 </body>
 </html>
