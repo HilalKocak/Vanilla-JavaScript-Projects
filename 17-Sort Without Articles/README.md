@@ -9,3 +9,6 @@
 https://javascript30challenge-day17.netlify.app/
 
 
+#### This is the preview of the application:
+![Screenshot of deployed app](img/preview.png)
+
