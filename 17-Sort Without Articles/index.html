@@ -52,23 +52,38 @@ const listBands = document.querySelector('#bands')
 
 const bands = ['The Plot in You', 'The Devil Wears Prada', 'Pierce the Veil', 'Norma Jean', 'The Bled', 'Say Anything', 'The Midway State', 'We Came as Romans', 'Counterparts', 'Oh, Sleeper', 'A Skylit Drive', 'Anywhere But Here', 'An Old Dog'];
   
-function removeArticles(name) {
-    const articles = ['The', 'A', 'An'];
-    for (const article of articles) {
-        if (name.startsWith(article + ' ')) {
-            return name.slice(article.length + 1);
-        }
-    }
-    return name;
+// function removeArticles(name) {
+//     const articles = ['The', 'A', 'An'];
+//     for (const article of articles) {
+//         if (name.startsWith(article + ' ')) {
+//             return name.slice(article.length + 1);
+//         }
+//     }
+//     return name;
+// }
+
+// const sortedBands = bands.sort((a, b) => {
+//     return removeArticles(a) > removeArticles(b) ? 1 : -1
+//   })
+
+// listBands.innerHTML = sortedBands.map(band => `<li>${band}</li>`).join('');
+
+// console.log(sortedBands)
+
+
+// another way
+
+function strip(bandName){
+  return bandName.replace(/^(a |an |the )/i, '').trim();
 }
 
 const sortedBands = bands.sort((a, b) => {
-    return removeArticles(a) > removeArticles(b) ? 1 : -1
-  })
+  return strip(a) > strip(b) ? 1 : -1
+})
 
-listBands.innerHTML = sortedBands.map(band => `<li>${band}</li>`).join('');
+listBands.innerHTML = (sortedBands.map(band => `<li>${band}</li>`)).join('')
 
-console.log(sortedBands)
+
 
 </script>
 
