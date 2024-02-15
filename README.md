@@ -20,4 +20,7 @@
 ##### 14- JavaScript References Vs Copying
 ##### 15- LocalStorage and Event Delegation
 ##### 16- CSS Text Shadow Mouse Move Effect
+##### 17- Sort Without Articles
+##### 18- Adding Up Times with Reduce
+
 
