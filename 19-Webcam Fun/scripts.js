@@ -29,11 +29,13 @@ function paintToCanvas() {
         ctx.drawImage(video, 0, 0, width, height);
         // take the pixels out
         let pixels = ctx.getImageData(0,0, width, height);
-        console.log(pixels);
+        //console.log(pixels);
         // mess with pixels
-        pixels = redEffect(pixels);
+       // pixels = redEffect(pixels);
+        pixels = rgbSplits(pixels);
+        ctx.globalAlpha = 0.1
         // put them back
-        ctx.putImageData(pixels,0,0);
+         ctx.putImageData(pixels,0,0);
         
     }, 16)
 }
@@ -55,14 +57,25 @@ function takePhoto() {
     strip.insertBefore(link, strip.firstChild);
 
 }
-function redEffect(pixels){
-    for(let i=0; i< pixels.data.length; i+=4){
-        pixels.data[i+0] = pixels.data[i+0] + 100 //RED
-        pixels[i+1] =  pixels[i+1] + 50 //GREEN
-        pixels[i+2] = pixels[i+2] * 0.5 //BLUE
+function redEffect(pixels) {
+    for (let i = 0; i < pixels.data.length; i += 4) {
+        pixels.data[i + 0] = pixels.data[i + 0] + 100; // RED
+        pixels.data[i + 1] = pixels.data[i + 1] - 50; // GREEN
+        pixels.data[i + 2] = pixels.data[i + 2] * 0.5; // BLUE
+    
     }
     return pixels; 
 }
+
+function rgbSplits(pixels) {
+    for (let i = 0; i < pixels.data.length; i += 4) {
+        pixels.data[i - 150] = pixels.data[i + 0] + 200; // RED
+        pixels.data[i + 500] = pixels.data[i + 1] + 50; // GREEN
+        pixels.data[i - 550] = pixels.data[i + 2] * 0.9; // BLUE
+    }
+    return pixels;
+}
+
 
 getVideo();
 
