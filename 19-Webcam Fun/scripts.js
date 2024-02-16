@@ -42,7 +42,8 @@ function takePhoto() {
     const link = document.createElement('a')
     link.href = data;
     link.setAttribute('download', 'pretty');
-    link.textContent = 'Download Image';
+    // link.textContent = 'Download Image';
+    link.innerHTML = `<img src="${data}" alt="Nice people" />`
     strip.insertBefore(link, strip.firstChild);
 
 }
