@@ -6,3 +6,4 @@ npm start
 
 ```
 
+- This application runs on the user's computer, that is, localhost.
