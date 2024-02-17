@@ -47,22 +47,21 @@
   };
 
   toggleLanguageButton.addEventListener('click', () => {
-    // Stop the current speech recognition session
+
     recognition.stop();
 
-    // Toggle between English and Turkish
     lang = lang === 'en-US' ? 'tr-TR' : 'en-US';
 
-    // Set the new language for speech recognition
+
     recognition.lang = lang;
 
-    // Update the button text to reflect the current language
     languageLabel.textContent = languages[lang];
 
 });
 
-  recognition.addEventListener('end', recognition.start)
-  recognition.start();
+recognition.addEventListener('end', () => recognition.start());
+
+recognition.start();
 
 
 </script>
