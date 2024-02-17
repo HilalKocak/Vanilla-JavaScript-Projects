@@ -9,13 +9,18 @@
 
   <div class="words" contenteditable>
   </div>
+  <button id="toggleLanguage" class="toggle-button">
+    <span id="languageLabel">English</span>
+  </button>
 
 <script>
   window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
   const recognition = new SpeechRecognition();
   recognition.interimResults = true;
-  recognition.lang = 'en-US';
+  // recognition.lang = 'en-US';
+  let lang = 'en-US';
+  recognition.lang = lang;
   let p = document.createElement('p');
   const words = document.querySelector('.words');
   words.appendChild(p);
@@ -33,6 +38,28 @@
       words.appendChild(p)
     }
   })
+  const toggleLanguageButton = document.getElementById('toggleLanguage');
+  const languageLabel = document.getElementById('languageLabel');
+
+  const languages = {
+    'en-US': 'English',
+    'tr-TR': 'Türkçe'
+  };
+
+  toggleLanguageButton.addEventListener('click', () => {
+    // Stop the current speech recognition session
+    recognition.stop();
+
+    // Toggle between English and Turkish
+    lang = lang === 'en-US' ? 'tr-TR' : 'en-US';
+
+    // Set the new language for speech recognition
+    recognition.lang = lang;
+
+    // Update the button text to reflect the current language
+    languageLabel.textContent = languages[lang];
+
+});
 
   recognition.addEventListener('end', recognition.start)
   recognition.start();
@@ -79,6 +106,24 @@
       bottom: 0;
       border: 1px solid;
       border-color: transparent #efe4e4;
+    }
+    .toggle-button {
+      border: none;
+      background-color: #4CAF50;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 8px;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+    }
+
+    .toggle-button:hover {
+      background-color: #45a049;
     }
   </style>
 
