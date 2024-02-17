@@ -16,8 +16,8 @@ https://javascript30challenge-day20.netlify.app/
 #### User asked to allow microphone:
 ![Screenshot of deployed app](img/preview1.png)
 
-#### Created p element when user take breaks:
+#### Change recignition language with toggle
 ![Screenshot of deployed app](img/preview2.png)
 
-#### User can edit the senctences:
+#### User can edit the sentences:
 ![Screenshot of deployed app](img/preview2.png)
