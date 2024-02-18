@@ -1,5 +1,7 @@
 ### Geolocation
 #### This project tracks the user's location and shows their speed and direction of movement on the compass.
+- Used the Geolocation API to continuously monitor the device's position
+- Can be used in applications which require real-time tracking of the user's location and orientation, such as navigation or location-based services.
 
 ##### Go to /21-Geolocation directory and run
 ```
