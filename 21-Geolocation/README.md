@@ -13,3 +13,6 @@ https://javascript30challenge-day21.netlify.app/
 
 #### This is the preview of the application:
 ![Screenshot of deployed app](img/preview.png)
+
+#### Used IOS Simulator to get actual data
+![Screenshot of ios simulator](img/preview2.png)
