@@ -1,9 +1,13 @@
-## 30 Vanilla JavaScript Project with No Frameworks No Compiler No Libraries No Boilerplate
+## 30 Vanilla JavaScript Project
+### - No Frameworks 
+### - No Compiler 
+### - No Libraries 
+### - No Boilerplate
 
-### JavaScript30 challenge formed by Wes Bos at https://javascript30.com/
+#### JavaScript30 challenge formed by Wes Bos at https://javascript30.com/
 - This challenge is about making 30 JavaScript project in 30 days.
 
-#### Projects
+### Projects
 ##### 1- JavaScript Drum Kit
 ##### 2- CSS + JS Clock
 ##### 3- Playing with CSS Variables and JS
@@ -24,5 +28,6 @@
 ##### 18- Adding Up Times with Reduce
 ##### 19- Webcam Fun
 ##### 20- Speech Detection
+##### 21- Geolocation
 
 
