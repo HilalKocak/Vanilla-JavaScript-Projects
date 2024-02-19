@@ -30,10 +30,12 @@
 
     const triggers = document.querySelectorAll('a');
     const highlight = document.createElement('span');
+    let isInitialHover = true;
     highlight.classList.add('highlight');
     document.body.append(highlight);
 
     function highlightLink(){
+
       console.log(this)
       const linkCoords = this.getBoundingClientRect();
       console.log(linkCoords);
@@ -48,7 +50,12 @@
       highlight.style.width = `${coords.width}px`
       highlight.style.height = `${coords.height}px`
       highlight.style.transform = `translate(${coords.left}px, ${coords.top}px)`
-
+      // do not hover first place bcx there is no prev location
+      if (isInitialHover) {
+        isInitialHover = false; 
+      } else {
+        highlight.classList.add('active');
+      }
 
     }
 
