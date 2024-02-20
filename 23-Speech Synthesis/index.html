@@ -34,6 +34,7 @@
   let voices = [];
   const voicesDropdown = document.querySelector('[name="voice"]');
   const options = document.querySelectorAll('[type="range"], [name="text"]');
+  // options = input input text area
   const speakButton = document.querySelector('#speak');
   const stopButton = document.querySelector('#stop');
   msg.text = document.querySelector('[name="text"]').value;
@@ -42,10 +43,9 @@
     voices = this.getVoices();
     console.log(voices);
     voicesDropdown.innerHTML = voices
-    .map(voice => `<option value="${voice.name}">${voice.name} ${voice.land}</option>`)
+    // .filter(voice => voice.lang.includes('en')) I want all langs
+    .map(voice => `<option value="${voice.name}">${voice.name} ${voice.lang}</option>`)
     .join('');
-   
-
   }
 
   function setVoice(){
@@ -54,12 +54,24 @@
     toggle()
   }
 
-  function toggle(){
+  function toggle(startOver = true){
     speechSynthesis.cancel();
-    speechSynthesis.speak(msg);
+    if(startOver){
+      speechSynthesis.speak(msg);
+    }
+  }
+
+  function setOption(){
+    console.log(this.name, this.value);
+    msg[this.name] = this.value;
+    toggle();
   }
   speechSynthesis.addEventListener('voiceschanged', populateVioces);
   voicesDropdown.addEventListener('change', setVoice)
+  options.forEach(option => option.addEventListener('change', setOption))
+  speakButton.addEventListener('click', toggle);
+  stopButton.addEventListener('click', ()=> toggle(false));
+ // or toggle.bind(null, false) -> this works too
 </script>
 
 </body>
