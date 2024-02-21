@@ -40,20 +40,29 @@
     background: coral;
   }
 </style>
-
-<button></button>
+<p><em>Psst: have a look at the JavaScript Console</em> 👩🏻‍💻</p>
+<button>Click!</button>
 <script>
+  const button = document.querySelector('button')
   const divs = document.querySelectorAll('div')
 
   function logText(e) {
     console.log(this.classList.value)
     // console.log(this)
-    e.stopPropagation();
+    // e.stopPropagation(); // stop bubbling
   }
 
   divs.forEach(div => div.addEventListener('click', logText, {
-    capture: true
+    capture: false,
+    once: true
   }));
+
+  button.addEventListener('click', ()=> {
+    console.log('Click!!!!');
+  },
+  {
+      once:true
+  });
   
 </script>
 </body>
