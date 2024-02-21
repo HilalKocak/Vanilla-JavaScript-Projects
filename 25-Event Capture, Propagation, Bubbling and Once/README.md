@@ -1,2 +1,2 @@
 ### Event Capture, Propagation, Bubbling and Once
-- Nested elements are triggered from the inside outwards
+- Nested elements are triggered from the inside outwards. When set the capture: true, event starts from the outermost element and propagates inwards to the innermost element.
