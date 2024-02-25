@@ -36,4 +36,7 @@
 ##### 26- Stripe Follow Along Nav
 ##### 27- Click and Drag
 ##### 28- Video Speed Controller
+##### 29- Countdown Timer
+##### 30- Whack A Mole
+
 
