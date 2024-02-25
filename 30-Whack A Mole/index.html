@@ -13,7 +13,7 @@
 
     
     <div class="speed">
-      <input type="range" min="50" max="900" value="200" class="speed-bar" id="speed-bar">
+      <input type="range" min="20" max="950" value="200" class="speed-bar" id="speed-bar">
     </div>
   </div>
 
@@ -77,8 +77,8 @@
   }
 
   function peep(){
-    console.log('PEPED', speedRate)
-    const time = randomTime(speedRate, 3000);
+    console.log('WOAA', speedRate)
+    const time = randomTime(speedRate, 1000);
     const hole = randomHole(holes);
 
     hole.classList.add('up');
