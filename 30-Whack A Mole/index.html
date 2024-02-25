@@ -8,6 +8,15 @@
   <link rel="icon" href="https://fav.farm/🔥" />
 </head>
 <body>
+  <h2>Speed: <span id="speed-value">200</span> 💪</h2>
+  <div class="wrapper">
+
+    
+    <div class="speed">
+      <input type="range" min="50" max="900" value="200" class="speed-bar" id="speed-bar">
+    </div>
+  </div>
+
 
   <h1>Whack-a-mole! <span class="score">0</span></h1>
   <h2>Max Score: <span class="max-score">0</span></h1>
@@ -39,9 +48,12 @@
   const scoreBoard = document.querySelector('.score');
   const maxScore = document.querySelector('.max-score');
   const moles = document.querySelectorAll('.mole');
+  const speed = document.querySelector('.speed-bar');
+  const speedValue = document.getElementById('speed-value');
   let lastHole;
   let timeUp = false;
   let score = 0;
+  let speedRate = 200;
 
   const highScore = localStorage.getItem('highScore');
   if (highScore) {
@@ -65,9 +77,10 @@
   }
 
   function peep(){
-    const time = randomTime(200, 1000);
+    console.log('PEPED', speedRate)
+    const time = randomTime(speedRate, 3000);
     const hole = randomHole(holes);
-    console.log(time, hole);
+
     hole.classList.add('up');
     setTimeout(()=> {
       hole.classList.remove('up');
@@ -80,7 +93,7 @@
     timeUp = false;
     score = 0;
     peep();
-    setTimeout(() => timeUp = true, 100000)
+    setTimeout(() => timeUp = true, 10000)
   }
 
   function bonk(e){
@@ -88,7 +101,7 @@
     score ++;
     this.classList.remove('up');
     scoreBoard.textContent = score;
-    console.log(e)
+
 
     const highScore = localStorage.getItem('highScore') || 0;
     if (score > highScore) {
@@ -99,6 +112,11 @@
   }
 
   moles.forEach(mole => mole.addEventListener('click', bonk))
+
+  speed.addEventListener('input', function() {
+    speedRate = 950 - parseInt(this.value);
+    speedValue.textContent = 950-speedRate;
+  });
 
 
 </script>

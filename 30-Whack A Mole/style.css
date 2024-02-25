@@ -73,3 +73,44 @@ h2 {
 .hole.up .mole {
   top: 0;
 }
+
+.speed {
+  background: #efefef;
+  flex: 1;
+  display: flex;
+  justify-content: start;
+  margin: 10px;
+  border-radius: 50px;
+  box-shadow: 0 0 1px 3px rgba(0,0,0,0.1);
+  overflow: hidden; 
+  margin-left: 200px;
+  margin-right: 200px;
+
+}
+
+.speed-bar {
+  width: 100%;
+  background: linear-gradient(-170deg, #4d02bd 0%, #d2b8f9 100%);
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.2);
+  display: flex;
+  font-size: 2rem;
+  justify-content: start;
+  padding: 8px;
+  color: white;
+  height: 16.3%;
+}
+button {
+  background-color: purple;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #6a0dad;
+}
+
