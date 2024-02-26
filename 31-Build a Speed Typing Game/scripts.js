@@ -1,7 +1,7 @@
 const RANDOM_QUOTE_API_URL = 'https://api.quotable.io/random';
 const quoteDisplay = document.getElementById('quoteDisplay')
 const quoteInput = document.querySelector('.quote-input')
-
+const timer = document.getElementById('timer')
 
 quoteInput.addEventListener('input', ()=> {
     console.log('changed')
@@ -45,6 +45,20 @@ async function renderNewQuote(){
         characterSpan.innerText = character
         quoteDisplay.appendChild(characterSpan)
     })
+    startTimer()
+}
+
+let startTime = ''
+function startTimer(){
+    timer.innerText = 0
+    startTime = new Date()
+    setInterval(() => {
+        timer.innerText = getTimerTime()
+    }, 1000)
+}
+
+function getTimerTime(){
+    return Math.floor((new Date() - startTime) / 1000) // ms to seconds
 }
 
 renderNewQuote()
