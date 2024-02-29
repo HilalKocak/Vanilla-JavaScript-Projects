@@ -105,9 +105,10 @@ body {
 .weather {
     display: none;
 }
-h1 {
+.title {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: #00feba;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 80px;
+ 
 }
