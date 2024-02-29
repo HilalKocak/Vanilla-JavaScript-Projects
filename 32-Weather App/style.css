@@ -92,4 +92,22 @@ body {
 .humidity, .wind{
     font-size: 28px;
     margin-top: -6px;
+  
+}
+
+.error {
+    text-align: left;
+    margin-left: 10px;
+    font-size: 14px;
+    margin-top: 10px;
+    display: none;
+}
+.weather {
+    display: none;
+}
+h1 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #00feba;
+    text-align: center;
+    margin-top: 100px;
 }
