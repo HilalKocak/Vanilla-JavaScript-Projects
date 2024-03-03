@@ -1,9 +1,13 @@
-## 32 Vanilla JavaScript Project
+## 33 Vanilla JavaScript Project
 - No Frameworks 
 - No Compiler 
 - No Libraries 
 - No Boilerplate
 
+#### To clone the repository, run:
+```
+https://github.com/HilalKocak/Vanilla-JavaScript-Projects.git
+```
 
 ### Projects 
 
