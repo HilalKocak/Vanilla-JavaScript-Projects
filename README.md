@@ -4,6 +4,8 @@
 - No Libraries 
 - No Boilerplate
 
+Every project comes with its own README. You can view its screenshots and find links to the deployed versions to try. Let's start!
+
 #### To clone the repository, run:
 ```
 https://github.com/HilalKocak/Vanilla-JavaScript-Projects.git
