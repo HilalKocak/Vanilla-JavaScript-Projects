@@ -44,6 +44,7 @@ https://github.com/HilalKocak/Vanilla-JavaScript-Projects.git
 ##### 31- Build a Speed Typing Game
 ##### 32- Weather App
 ##### 33- To Do List
+##### 34- Quiz App
 
 References
 - https://javascript30.com/
