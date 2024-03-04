@@ -1,4 +1,4 @@
-## 33 Vanilla JavaScript Project
+## 34 Vanilla JavaScript Project
 - No Frameworks 
 - No Compiler 
 - No Libraries 
